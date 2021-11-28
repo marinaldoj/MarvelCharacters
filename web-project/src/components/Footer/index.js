@@ -28,14 +28,17 @@ const Text = styled.p`
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
 `;
-function teste1() {
+
+// Função responsavel por abrir o linkedin no meu perfil
+function OpenLinkedin() {
     window.open('https://www.linkedin.com/in/marinaldo-carvalho-0a470a192/', '_blank');
 }
 
+// componente apenas de agradecimento 
 function Footer(){
     return(
         <Container >
-            <Linkedin onClick={() => teste1()} />
+            <Linkedin onClick={() => OpenLinkedin()} />
             <Text> 
                 Aplicação desenvolvida como challenge e mais um aprendizado, 
                 fico grato pela opotunidade e por avaliarem minha aplicação.

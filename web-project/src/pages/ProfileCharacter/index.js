@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from 'react-router-dom'
 
+// Aqui ficam imports de componentes da aplicação
 import ButtonCircle from "../../components/ButtonCircle";
 import { securityAccess, Api } from "../../services/api";
 
+// Aqui ficam os estilos e componentes do Styled components
 const Container = styled.div`
     height: 60%;
     padding: 20px;
@@ -49,11 +51,17 @@ const NomeCharacter = styled.p`
 
 function ProfileCharacter(){
 
+    // Aqui eu encontro o valor do id atraves do route params
     const {id} = useParams();
 
+    // Estado character é o estado do personagem que veio da API
     const [character, setCharacter] = useState({});
 
+    // Hook que cuida dos estados do componente na montagem
     useEffect(() => {
+        // Get na API Marvel em characters/ID 
+        // SecurityAccess é um acesso que a marvel disponibiliza por conta
+        // Favor consultar o Reade.me para mais informações de como configurar
         Api.get(`/characters/${id}${securityAccess}`)
        .then(response => {
         setCharacter(response.data.data.results[0])
@@ -66,9 +74,11 @@ function ProfileCharacter(){
             <ContainerDescription>
                 <NomeCharacter>{character && character.name}</NomeCharacter>
                 <Text>
+                    {/* Aqui é localizada a descrção alguns personagem não tem */}
                     {character.description === "" ? "Descrição não informada pera API." : character.description}
                 </Text>
             </ContainerDescription>
+            {/* Aqui onde é carregado a imagem do character */}
             {character.thumbnail !== undefined ? <Image src={`${character.thumbnail.path}.${character.thumbnail.extension}`}/> : null}            
         </Container>
     )

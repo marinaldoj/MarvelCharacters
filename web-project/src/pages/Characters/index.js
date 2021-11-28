@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { FaSearch } from 'react-icons/fa';
 import Paginate from 'react-paginate';
 
+// Aqui ficam imports de componentes da aplicação
 import FeelingLucky from "../../components/ButtonFeelingLucky";
 import Characters from "../../components/Characters";
 import { Api, securityAccess } from '../../services/api'
 
+// Aqui ficam os estilos e componentes do Styled components
 const Container = styled.div`
     height: 60%;
     padding: 20px 20px 0 20px;
@@ -110,11 +112,18 @@ const GridCharacters = styled.div`
     flex-wrap: wrap;
 `
 
-function Home(){
+//  Aqui onde se inicia a aplicação
+function AllCharacters(){
 
+    // Aqui estão os estados da tela de Characters
+
+    // O estado characters armazenará todos os Personagem que vem da API
     const [characters, setCharacters] = useState({});
+
+    // O estado charactersPaginate responsavel por auxiliar a paginação
     const [charactersPaginate, setCharactersPaginate] = useState([]);
 
+    // Função que indetifica qual pagina foi clicada e quais Characters exibir
     function  HandlePageClick(event){
         let first = event.selected !== 0 ? (event.selected * 8) : 0
         let last = first + 7
@@ -128,6 +137,7 @@ function Home(){
         
     }
 
+    // Função que organiza o filtro da aplaicação
     function FilterCharacters(value){
         if(characters.results === undefined){
             setCharactersPaginate([])
@@ -146,13 +156,18 @@ function Home(){
         }
     }
 
+    // Hook que cuida dos estados do componente na montagem
     useEffect(() => {
+        // Get na API Marvel em characters
+        // SecurityAccess é um acesso que a marvel disponibiliza por conta
+        // Favor consultar o Reade.me para mais informações de como configurar
         Api.get(`/characters${securityAccess}`)
        .then(response => {
         setCharacters(response.data.data)
        })
     }, []);
 
+    // Função que monta a estrutura de paginação sempre que Characters ganhar seu valor
     useEffect(() => {
         HandlePageClick({selected:0})        
     }, [characters]);
@@ -190,4 +205,4 @@ function Home(){
     )
 }
 
-export default Home
+export default AllCharacters

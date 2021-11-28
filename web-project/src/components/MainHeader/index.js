@@ -51,11 +51,13 @@ const LineRed = styled.div`
     transition: 0.2s;
 `;
 
+// componente responsaevl por todo header da aplicação
 function MainHeader(){
     const location = useLocation()
 
     const [ marginLength, setMarginLength ] = useState(location.pathname === '/' ? '4' : '68')
 
+    // Hook usada para captar em qual path se encontra e adaptar o estilo
     useEffect(() => {
         setMarginLength(location.pathname === '/' ? '4' : '68');
     }, [location.pathname])

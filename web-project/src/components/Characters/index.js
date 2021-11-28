@@ -44,12 +44,15 @@ const DoorGrey = styled.div`
     transition: 0.3s;
 `;
 
+// componente que que exibe o character
 function Characters ({character}){
 
+    // Hook para fazer navegação
     const navigate = useNavigate();
 
     const [ doorValue, setDoorValue ] = useState('')
 
+    // função que faz a navegação para a rota do character
     function selectCharacter(id){
         navigate(`/character/${id}`)
     }

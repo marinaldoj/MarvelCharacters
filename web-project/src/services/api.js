@@ -13,5 +13,5 @@ export const securityAccess = `?ts=${time}&apikey=${publicKey}&hash=${hash}`
 
 
 export const Api = axios.create({
-    baseURL: 'http://gateway.marvel.com/v1/public'
+    baseURL: process.env.REACT_APP_API_MARVEL
 })

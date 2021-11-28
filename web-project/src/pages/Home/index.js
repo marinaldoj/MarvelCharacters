@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import ButtonCircle from '../../components/ButtonCircle'
 
+// Aqui ficam os estilos e componentes do Styled components
 const Container = styled.div`
     height: 60%;
     padding: 20px;
@@ -18,7 +19,7 @@ const Text = styled.p`
     font-size: 18px;
     font-weight: 400;
 `
-
+// Função que cria a tela principal ou "apresentação" da aplicação
 function Home(){
     return(
         <Container>

@@ -26,9 +26,14 @@ const ChevronRight = styled(FaChevronRight)
 const ChevronLeft = styled(FaChevronLeft)
     .attrs({size: 80})`color:#fff; margin-right:10px;`;
 
+
+// Componente responsavel pelo botão redondo grande
 function ButtonCircle({angle = 'Right', Href}){
+
+    // Hook para fazer navegação
     const navigate = useNavigate()
 
+    // função que faz a navegação
     function handleClick(link){
         navigate(link)
     }

@@ -18,12 +18,14 @@ const Container = styled.button`
     }
 `;
 
-
-
+// Componente que cria o botao de FeelingLucky 
 function FeelingLucky({characters}){
 
+    // Hook para fazer navegação
     const navigate = useNavigate()
 
+    // Essa função é responsavel por capturar um valor aleatório dos characters
+    // e faz a navegação para a tela de character
     function ClickFeelingLucky(characters){
         const resultado = characters.results[Math.floor(Math.random() * characters.results.length)]
         navigate(`/character/${resultado.id}`)
