@@ -2,6 +2,12 @@
 
 Esta aplicação tem como principal objetivo realizar a apresentação dos super heróis da Marvel, por meio de uma integração por Marvel API.
 
+# Protótipo do projeto
+
+Foi desenvolvido um protótipo para o projeto para ter como base o resultado final da aplicação.
+Link para o protótipo no figma: 
+``` https://www.figma.com/file/bIcZFPd5XBHHoXWdCbhQMF/Marvel-Characters?node-id=0%3A1 ```
+
 # Configuração utilizada
 
 * node version v16.13.0
