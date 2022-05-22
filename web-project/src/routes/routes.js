@@ -11,7 +11,7 @@ import ProfileCharacter from '../pages/ProfileCharacter'
 function Router(){
     return(
         <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/:lang" exact element={<Home />} />
             <Route path="/characters" exact element={<Characters />} />
             <Route path="/character/:id" exact element={<ProfileCharacter />} />
         </Routes>
