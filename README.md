@@ -53,8 +53,3 @@ Após toda a configuração feita basta salvar e executar o comando
 # Minhas conclusões
 
 A Aplicação ficou bem funcional com muito potencial de crescimento e expansão, podendo ser feito novas features e melhorias e até mesmo incluir outras funcionalidades na aplicação.
-
-# Agradecimento
-
-Fico grato pela oportunidade espero que tenha gostado do resultado final da aplicação.
-*
