@@ -2,6 +2,8 @@
 
 Esta aplicação tem como principal objetivo realizar a apresentação dos super heróis da Marvel, por meio de uma integração por Marvel API.
 
+Atualizando!
+
 # Protótipo do projeto
 
 Foi desenvolvido um protótipo para o projeto para ter como base o resultado final da aplicação.
